@@ -22,27 +22,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'web'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('web');
-  });
-
-  it('should render title', () => {
+  it('deve conter um router-outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('web app is running!');
-  });
-
-  it('deve calcular o cumprimento correto pelo horário', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    Date.prototype.getHours = () => 10;
-    expect(app.geraCumprimento()).toEqual('Bom dia');
-
-    Date.prototype.getHours = () => 15;
-    expect(app.geraCumprimento()).toEqual('Boa tarde');
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 
 });
