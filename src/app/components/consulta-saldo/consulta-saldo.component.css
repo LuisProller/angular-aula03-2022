@@ -3,3 +3,9 @@
   font-style: italic;
   margin: 1em 0;
 }
+.positivo {
+  color: green;
+}
+.negativo {
+  color: red;
+}

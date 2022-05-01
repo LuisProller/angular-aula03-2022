@@ -22,4 +22,16 @@ export class ConsultaSaldoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public classNamePorValor(saldo: number): ('negativo' | 'positivo' | 'zero') {
+    // return saldo < 0 ? 'negativo' : 'positivo';
+
+    if (saldo < 0.01) {
+      return 'negativo';
+    } else if (saldo > 0) {
+      return 'positivo';
+    } else {
+      return 'zero'
+    }
+  }
+
 }
